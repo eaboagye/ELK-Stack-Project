@@ -1,4 +1,20 @@
-# ELK-Stack-Project
+# ELK-Stack-Project / # Automated ELK Stack Deployment
+
+Before begining with the ELK-STACK Deployment, below are the prequisite to follow:
+
+Prerequisites
+
+To run a container, you will need the following:
+
+    DOCKER
+
+    Install Docker, either using a native package (Linux) or wrapped in a virtual machine. In this case, the docker was installed on a virtual machine using Microsoft Azure.
+
+    A minimum of 4GB RAM assigned to the Docker
+
+    Elasticsearch alone needs at least 2GB of RAM to run.
+
+
 Setting up an Elk Stack Server to monitor cloud network using Microsoft Azure.
 
 The ELK stack allows analysts to:
@@ -9,7 +25,6 @@ Quickly execute complex searches, such as: Find the 12 internal IP addresses tha
 
 Build graphs, charts, and other visualizations from network data.
 
-## Automated ELK Stack Deployment
 
 The files in this repository were used to configure the network depicted below.
 
