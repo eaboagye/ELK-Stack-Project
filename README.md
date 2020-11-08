@@ -82,18 +82,12 @@ A summary of the access policies in place can be found in the table below.
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because it is easy to use and determine the flow of data configuations on the various machines. The Ansible helps with easy system automations as well.
 
 
-The playbook implements the following tasks:
+The playbook implements the following tasks: 
 
-# Create a New VM (should be named something simple "Elk-Server") Keep note of the Private IP (10.0.0.11) and the Public IP (0.0.0.0) you will need the Private IP to SSH into the VM and the Public IP to connect to the Kibana Portal (HTTP Site) to view all Metrics/Syslogs.
+1. Creating the Elk Stack on a new virtual Machine.
+2. Downloading and configuring the Elk Stack on the virtual machine using an ansible-playbook.
+3. Launching and exposing the container to verify if there are no installations and connection errors from the JumpBox. Then you create an inbound and outbound security policies or rules to help from unauthorized access.
 
-# Download and Configure the "elk-docker" container "In the hosts.conf you will need to add a new group [elkservers] and the Private IP (10.0.0.11) to the group. Then you need to create a new ansible-playbook that will download, install, configures the "Elk-Server" to map the following ports [5601,9200,5044], and starts the container.
-
-# Launch and expose the container "After installing and starting the new container. You can verify that the container is up and running by SSHing into the container from your JumpBox (SAW). Once you are in the [Elk-Server] run the command [sudo docker ps]
-# Create new Inbound Security Rules to allow Ports: 5601 and 9200 "The Inbound Security Rules should allow access from your Personal Network"
-Open a new browser and type in the [Public IP:5601] to access the Kibana Portal Site
-The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
-
-![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
