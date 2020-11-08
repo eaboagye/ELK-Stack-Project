@@ -40,37 +40,42 @@ Load balancing ensures that the application will be highly available and respons
 The -load balancer sits between client devices and backend servers, receiving and then distributing incoming requests to any available server capable of fulfilling them.
 The load balancers protect an organization against distributed denial-of-service (DDoS) attacks. It does this by shifting attack traffic from the corporate server to a public cloud provider. A jump box is a secure computer that all admins first connect to before launching any administrative task or use as an origination point to connect to other servers or untrusted networks.
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
-- _TODO: What does Filebeat watch for?_
-- _TODO: What does Metricbeat record?_
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the logs and system traffic.
+- Filebeat monitors log files and collects log events then forward these logs to the Elasticsearch.
+- Metricbeat gather and collect metrics from the serving running on the machine and the operating system.
 
 
-| Name          | Function | IP Address | Operating System |
-|----------     |----------|------------|------------------|
-| Jump Box      | Gateway  | 10.0.0.1   | Linux            |
-| VM 1          |          | 10.0.0.1   | Linux            |
-| Load Balancer |          | 10.0.0.1   | Linux            |
-| VM 2          |          | 10.0.0.1   | Linux            |
-| VM 3          |          | 10.0.0.1   | Linux            |
-| VM 4 - ELK    |          | 10.0.0.1   | Linux            |
+| Name          | Function                   | IP Address | Operating System |
+|---------------|--------------------------- |------------|------------------|
+| Jump Box      | Gateway                    | 10.0.0.5   | Linux            |
+| VM 1          | Docker                     | 10.0.0.6   | Linux            |
+| VM 2          | Docker                     | 10.0.0.7   | Linux            |
+| VM 3          | Docker                     | 10.0.0.8   | Linux            |
+| VM 4 - ELK    |Management of system logs   | 10.1.0.5   | Linux            |
+
 
 ### Access Policies
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_
+Only the Elk Server machine can accept  can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+- 10.0.0.5
+  10.0.0.6
+  10.0.0.7
+  10.0.0.8
 
-Machines within the network can only be accessed by _____.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
+Machines within the network can only be accessed by the Jump Box. Its IP address is 10.0.0.5
+
 
 A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
 | Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
+|          | No                    |                    |
 |          |                     |                      |
-|          |                     |                      |
+
+
 
 ### Elk Configuration
 
